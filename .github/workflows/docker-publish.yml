@@ -80,6 +80,6 @@ jobs:
           
           # and finally publish to Docker Hub registry
           docker tag "$IMAGE_NAME" maymeow/hugo:$VERSION
-          docker push maymeow/php-ci-cd:$VERSION
+          docker push maymeow/hugo:$VERSION
       
       
