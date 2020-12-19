@@ -79,7 +79,7 @@ jobs:
           docker push $IMAGE_ID:$VERSION
           
           # and finally publish to Docker Hub registry
-          docker tag "$IMAGE_NAME" maymeow/php-ci-cd:$VERSION
+          docker tag "$IMAGE_NAME" maymeow/hugo:$VERSION
           docker push maymeow/php-ci-cd:$VERSION
       
       
