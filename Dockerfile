@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM node:15.6.0-alpine3.12
 MAINTAINER HSOWW <hsoww@hsoww.net>
 
 ENV HUGO_VERSION=0.80.0
@@ -18,6 +18,9 @@ RUN set -eux && \
   rm -r ${HUGO_VERSION}.tar.gz && \
   ## rm /var/cache/apk/* 
   hugo version
+  
+RUN npm -i -g netlify-cli \
+    && netlify
 
 EXPOSE 1313
 
