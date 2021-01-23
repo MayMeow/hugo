@@ -19,8 +19,7 @@ RUN set -eux && \
   ## rm /var/cache/apk/* 
   hugo version
   
-RUN npm -i -g netlify-cli \
-    && netlify
+RUN npm i -g netlify-cli
 
 EXPOSE 1313
 
