@@ -56,7 +56,7 @@ jobs:
       - name: Login to Docker Registry
         run: echo "${{ secrets.DOCKER_PW }}" | docker login -u "${{ secrets.DOCKER_USER }}" --password-stdin
 
-      - name: Push image
+      - name: Push to Github Container registry
         run: |
           IMAGE_ID=ghcr.io/${{ github.repository }}/$IMAGE_NAME
 
@@ -78,6 +78,8 @@ jobs:
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
           
+      - name: Push to Docker Hub
+        run: |
           # and finally publish to Docker Hub registry
           docker tag "$IMAGE_NAME" maymeow/hugo:$VERSION
           docker push maymeow/hugo:$VERSION
